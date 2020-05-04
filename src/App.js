@@ -148,34 +148,38 @@ const App = () => {
             
 
             <Row className="wish-list-footer" justify="space-around">
-              <Col span={24}>
-              <Row className="heading" justify={"space-between"}>
-              <Col justify={"start"}>
-              
-              Subtotal 
-              </Col>
-              <Col justify={"end"}>
-              R$ 31,50
-              </Col>
-            </Row>
-              </Col>
-              <Col span={24}>
-              <Row className="heading" justify={"space-between"}>
-              <Col justify={"start"}  >
-                Total
-              </Col>
-              <Col justify={"end"}>
-                R$ 31,50
-              </Col>
-            </Row>
-              </Col>
-              <Col span={24}>
-              <Button type="primary" size={"large"} block>
-              Selecionar Pagamento
-              </Button>
-              </Col>
-            </Row>
 
+              <Col className="subtotal" span={24}>
+                <Row justify={"space-between"}>
+                  <Col justify={"start"}>
+                    <span className="line">Subtotal</span>
+                    <span className="line">Frete</span>
+                  </Col>
+                  <Col justify={"end"}>
+                    <span className="line price">R$31,50</span>
+                    <span className="line shipping">Grátis</span>
+                  </Col>
+                </Row>
+              </Col>
+
+              <Col className="total" span={24}>
+                <Row justify={"space-between"}>
+                  <Col justify={"start"}  >
+                    <span className="line">Total</span>
+                  </Col>
+                  <Col justify={"end"}>
+                    <span className="line price">R$31,50</span>
+                  </Col>
+                </Row>
+              </Col>
+
+              <Col className="btn" span={24}>
+                <Button type="primary" shape="round" size={"large"} block>
+                Selecionar Pagamento
+                </Button>
+              </Col>
+
+            </Row>
 
 
             <Row className="empty-cart" justify="space-around" align="middle">

@@ -57,7 +57,7 @@ export default class ProductList extends React.Component {
 
                 <Row gutter={[21, 50]}>
 
-                    {this.state.products.map(product =>
+                    {this.state.products.slice(0, 1).map(product =>
                         
                         <Col className="product-box" onClick={this.showModal} span={5}>
                             <div className="img"> <img src={product.imagem} alt={product.nome} /> </div>
