@@ -4,14 +4,12 @@ html
     body 
         margin: 0
         font-family: 'Open Sans', sans-serif
-        //font-family: 'Work Sans', sans-serif;
         -webkit-font-smoothing: antialiased
         -moz-osx-font-smoothing: grayscale
         background: #00000005 
 
 code 
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace
 
 header
     height: 80px !important
@@ -23,18 +21,65 @@ header
         text-align: right
         input
             background: transparent
-            color: #000
+            color: rgba(42, 49, 75, 1)
             &::placeholder
                 color: rgba(42, 49, 75, 0.3)
         .ant-input-affix-wrapper
             background: #f9f9fa
             border-radius: 15px
             border-color: #f9f9fa
+            .ant-input-prefix
+                background: url("./logo.svg")
+                width: 42px
 
 section
     background: transparent !important
-
-aside
-    background: #2A314B 0% 0% no-repeat padding-box
-    opacity: 0.02
-    color: #2A314B !important
+    main
+        padding: 34px 36.76px 0 32px
+        .ant-tabs-bar
+            border-bottom: 1px solid rgba(42, 49, 75, 0.1)
+            margin: 0 0 28px 0
+            .ant-tabs-nav 
+                .ant-tabs-tab
+                    text-transform: uppercase
+                    font-family: 'Work Sans', sans-serif
+                    font-size: 14px
+                    line-height: 16px
+                    padding: 0 0 17px 0
+                .ant-tabs-tab-active 
+                    font-weight: 600
+        .ant-tabs-content  
+            .ant-col-5 
+                -ms-flex: 0 0 19.83333333% !important
+                flex: 0 0 19.83333333% !important
+                max-width: 19.833333% !important
+            .product-box   
+                .img
+                    background: #FFF
+                    border: 1px solid rgba(0, 0, 0, 0.1)
+                    padding: 21px 20.24px 20px 21px
+                    text-align: center
+                    border-radius: 10px
+                
+            
+   
+    aside
+        background: rgba(42, 49, 75, 0.02) !important
+        color: #2A314B !important
+        padding: 25px 32px 0 30px
+        .heading
+            padding-bottom: 18px
+            border-bottom: 1px solid rgba(42, 49, 75, 0.1)
+            h3
+                color: #33C5F3
+                font-size: 18px
+                line-height: 24px
+                font-weight: 600
+                margin-bottom: 0
+            img
+                margin-top: -1px
+        .empty-cart
+            color: rgba(42, 49, 75, 0.4)
+            img
+                margin-bottom: 33.29px
+            

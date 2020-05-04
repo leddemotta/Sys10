@@ -3,40 +3,105 @@ import 'antd/dist/antd.css';
 import './App.sass';
 import { Layout } from 'antd';
 import { Row, Col } from 'antd';
-
-//import { Tabs } from 'antd';
-
-//const { TabPane } = Tabs;
-//const callback = (key) => { }
-
+import { Tabs } from 'antd';
 import { Input } from 'antd';
+import { Modal, Button } from 'antd';
 
-
+const { TabPane } = Tabs;
+const callback = (key) => { }
 const { Header, Sider, Content } = Layout;
 
 const App = () => {
+  
   return (
     <div className="produtos-sys10">
 
-      <Layout>
+      <Layout style={{ paddingTop: '80px' }}>
 
-        <Header>
+        <Header style={{ position: 'fixed', zIndex: 1, width: '100%', top: '0' }}>
           <Row justify={"space-between"}>
             <Col className="logo" justify={"start"}  >
               <a href="/">
-                <img src="./logo-sys10.png" alt="Sys10" />
+                <img src="./logo.svg" alt="Sys10" />
               </a>
             </Col>
             <Col className="search" justify={"end"}>
-              <Input placeholder="Buscar por Produto" size="large" prefix={"SH"} style={{ width: 414 }} />
+              <Input placeholder="Buscar por Produto" size="large" prefix={" "} style={{ width: 414 }} />
             </Col>
           </Row>
         </Header>
 
-        <Layout>
-          <Content style={{ padding: '0  0 0 32px' }}>Content</Content>
+        <Layout style={{ paddingRight: '365px' }}>
+          <Content>
+
+            <Tabs defaultActiveKey="1" onChange={callback}>
+              <TabPane tab="Categoria 1" key="1">
+
+              <Row gutter={[21, 50]}>
+                <Col className="product-box" span={5}> 
+                  <div className="img"> <img src="./logo.svg" alt="Sys10" /> </div>  
+                  <div className="infos"> 
+                    <h2>Coca Cola 220ml</h2> 
+                    <span className="price">R$ 5,50</span>
+                   
+                  </div>  
+                </Col>
+                <Col className="product-box" span={5}> 
+                  <div className="img"> <img src="./logo.svg" alt="Sys10" /> </div>  
+                  <div className="infos"> 
+                    <h2>Coca Cola 220ml</h2> 
+                    <span className="price">R$ 5,50</span>
+                  </div>  
+                </Col>
+                <Col className="product-box" span={5}> 
+                  <div className="img"> <img src="./logo.svg" alt="Sys10" /> </div>  
+                  <div className="infos"> 
+                    <h2>Coca Cola 220ml</h2> 
+                    <span className="price">R$ 5,50</span>
+                  </div>  
+                </Col>
+                <Col className="product-box" span={5}> 
+                  <div className="img"> <img src="./logo.svg" alt="Sys10" /> </div>  
+                  <div className="infos"> 
+                    <h2>Coca Cola 220ml</h2> 
+                    <span className="price">R$ 5,50</span>
+                  </div>  
+                </Col>
+                <Col className="product-box" span={5}> 
+                  <div className="img"> <img src="./logo.svg" alt="Sys10" /> </div>  
+                  <div className="infos"> 
+                    <h2>Coca Cola 220ml</h2> 
+                    <span className="price">R$ 5,50</span>
+                  </div>  
+                </Col>
+              </Row>
+
+              <Row gutter={[21, 50]}>
+                <Col span={5}>  AAAA </Col>
+                <Col span={5}>  AAAA </Col>
+                <Col span={5}>  AAAA </Col>
+                <Col span={5}>  AAAA </Col>
+                <Col span={5}>  AAAA </Col>
+              </Row>
+
+              </TabPane>
+              <TabPane tab="Categoria 2" key="2">
+                Content of Tab Pane 2
+              </TabPane>
+              <TabPane tab="Categoria 3" key="3">
+                Content of Tab Pane 3
+              </TabPane>
+            </Tabs>
+            <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+          </Content>
           <Sider
-            style={{ padding: '0  32px 0 0' }}
+            style={{
+              overflow: 'auto',
+              height: '100vh',
+              position: 'fixed',
+              right: 0,
+            }}
+
             width={365}
             breakpoint="lg"
             collapsedWidth="100%"
@@ -46,7 +111,30 @@ const App = () => {
             onCollapse={(collapsed, type) => {
               console.log(collapsed, type);
             }}
-          > AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA </Sider>
+          >
+
+
+            <Row className="heading" justify={"space-between"}>
+              <Col justify={"start"}  >
+                <h3> Seu Pedido </h3>
+              </Col>
+              <Col justify={"end"}>
+                <img src="./compras.svg" alt="compras" />
+              </Col>
+            </Row>
+
+
+            <Row className="empty-cart" justify="space-around" align="middle">
+              <Col span={14}>
+                <img src="./carrinho-vazio.svg" alt="compras" />
+<br></br>
+                Seu carrinho está vazio :(
+
+              </Col>
+            </Row>
+
+
+          </Sider>
         </Layout>
       </Layout>
 
