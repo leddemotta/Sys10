@@ -30,7 +30,7 @@ const App = () => {
               </a>
             </Col>
             <Col className="search" justify={"end"}>
-              <Input placeholder="Buscar por Produto" size="large" prefix={" "} style={{ width: 414 }} />
+              <Input placeholder="Buscar por Produto" size="large" prefix={<><img src="./fechar.svg" /></>} style={{ width: 414 }} />
             </Col>
           </Row>
         </Header>

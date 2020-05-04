@@ -1,13 +1,11 @@
 import React from 'react';
-import axios from 'axios';
-import { Row, Col } from 'antd';
-import { Modal, Button } from 'antd';
-//import API from '../api';
+import { Modal, Button, Row, Col  } from 'antd';
+import API from './api.js';
 
 export default class ProductList extends React.Component {
 
     state = {
-        persons: [],
+        products: [],
         visible: false
     }
 
@@ -30,39 +28,53 @@ export default class ProductList extends React.Component {
             visible: false,
         });
     };
-
-
+    
     componentDidMount() {
-        axios.get(`http://5eab0478a280ac00166570ca.mockapi.io/api/produto`)
+        API.get(`/produto`)
             .then(res => {
-                const persons = res.data;
-                this.setState({ persons });
+                const products = res.data;
+                this.setState({ products });
             })
     }
 
     render() {
+        console.log(this.showModal);
         return (
             <>
+         
                 <Row gutter={[21, 50]}>
-                    {this.state.persons.map(person =>
+                    {this.state.products.slice(0, 1).map(product =>
                         <Col className="product-box" onClick={this.showModal} span={5}>
-                            <div className="img"> <img src={person.imagem} alt="Sys10" /> </div>
+                            <div className="img"> <img src={product.imagem} alt={product.nome} /> </div>
                             <div className="infos">
-                                <h2>{person.nome}</h2>
-                                <span className="price">R$ {person.preco}</span>
+                                <h2>{product.nome}</h2>
+                                <span className="price">R$ {product.preco}</span>
                             </div>
                             <Modal
                                     title="Detalhes do Produto"
                                     visible={this.state.visible}
+                                    width={358}
+                                    footer={<>
+                                     <Row justify={"space-between"}>
+                                        <Col justify={"start"}  >
+                                           AAAA
+                                        </Col>
+                                        <Col justify={"end"}>
+                                            <Button type="primary" shape="round" size={"large"}> Adicionar ao Carrinho </Button>
+                                        </Col>
+                                    </Row>
+                                       
+                                    </>}
+                                    closeIcon={<><img src="./fechar.svg" /></>}
+                                    className={"product-detail id-" + product.id}
                                     onOk={this.handleOk}
                                     onCancel={this.handleCancel}
                                 >
-                                    <div className="img"> <img src={person.imagem} alt="Sys10" /> </div>
+                                    <div className="img"> <img src={product.imagem} alt={product.nome} /> </div>
                                     <div className="infos">
-                                        <h2>{person.nome}</h2>
-                                        
-                                        <span className="desc">R$ {person.descricao}</span>
-                                        <span className="price">R$ {person.preco}</span>
+                                        <span className="title"> {product.nome} </span>
+                                        <span className="desc"> {product.descricao} </span>
+                                        <span className="price">R$ {product.preco}</span>
                                     </div>
                                 </Modal>
                         </Col>

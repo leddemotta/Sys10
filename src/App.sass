@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Work+Sans:wght@500;600&display=swap')
-    
+
 html 
     body 
         margin: 0
@@ -30,14 +30,7 @@ header
             border-radius: 15px
             border-color: #f9f9fa
             .ant-input-prefix
-                background: url("./logo.svg")
                 width: 42px
-                // image-url arguments:
-                // $path: path relative to images directory in config.rb
-                // $path-only: if true, will cause only the path to be returned instead of a `url()` function
-                // $cache-buster: When set to `false` no cache buster will be used (i.e. `?313420982`)
-                //$header-img: image-url('./busca.svg', false, false)
-                //background-image: $header-img
 
 section
     background: transparent !important
@@ -82,9 +75,6 @@ section
                         line-height: 19px
                         color: rgba(42, 49, 75, 0.4)
 
-                
-            
-   
     aside
         background: rgba(42, 49, 75, 0.02) !important
         color: #2A314B !important
@@ -105,3 +95,75 @@ section
             img
                 margin-bottom: 33.29px
             
+.product-detail 
+    border-radius: 5px
+    overflow: hidden
+    .img 
+        background: #FFF
+        border: 1px solid rgba(0, 0, 0, 0.1)
+        padding: 21px 20.24px 20px 21px
+        text-align: center
+        border-radius: 10px
+        margin-bottom: 27px
+        img 
+            width: 100%
+    .infos
+        span
+            display: block
+        .title 
+            font-weight: 600
+            line-height: 22px
+            margin-bottom: 0
+            font-size: 16px
+            color: rgba(42, 49, 75, 0.6)
+        .desc
+            font-size: 14px
+            line-height: 19px
+            color: rgba(42, 49, 75, 0.4)
+            padding: 10px 0 8px 0 
+        .price
+            font-size: 18px
+            line-height: 24px
+            color: #00C690
+            font-weight: 600
+    .ant-modal-header
+        padding: 0px 28px 0px 27px
+        color: rgba(0, 0, 0, 0.65)
+        background: #fff
+        border-bottom: 0
+        border-radius: 0
+        .ant-modal-title
+            margin: 0
+            padding: 20px 0 21px
+            color: rgba(42, 49, 75, 0.6)
+            font-weight: 600
+            font-size: 18px
+            line-height: 24px
+            word-wrap: break-word
+    .ant-modal-close 
+        top: 25px
+        right: 29.5px
+        .ant-modal-close-x
+            width: auto
+            height: auto
+            line-height: initial
+            font-size: 12px
+
+    .ant-modal-body 
+        padding: 0px 28px 27px 27px
+
+    .ant-modal-footer 
+        text-align: initial
+        padding: 18px 28px 18px 25px
+        .ant-btn-round.ant-btn-lg 
+            height: auto
+            border-color: rgba(51, 197, 243, 1)
+            background: rgba(51, 197, 243, 1)
+            line-height: 18px
+            padding: 11px 18.85px 14px 15.5px
+            font-size: 15px
+            font-weight: 600
+            border-radius: 10px !important
+            box-shadow: 0px 0px 10px rgba(51, 197, 243, 0.4)
+        
+
