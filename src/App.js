@@ -16,7 +16,7 @@ const App = () => {
 
   return (
 
-    
+
     <div className="produtos-sys10">
 
 
@@ -41,26 +41,23 @@ const App = () => {
 
             <Tabs defaultActiveKey="1" onChange={callback}>
               <TabPane tab="Categoria 1" key="1">
-              <ProductList />
+                <ProductList />
               </TabPane>
               <TabPane tab="Categoria 2" key="2">
-              <ProductList />
+                <ProductList />
               </TabPane>
               <TabPane tab="Categoria 3" key="3">
-              <ProductList />
+                <ProductList />
               </TabPane>
             </Tabs>
-            <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
           </Content>
           <Sider
-          
-          style={{
-            overflow: 'auto',
-            height: '100vh',
-            position: 'fixed',
-            right: 0,
-          }}
-
+            style={{
+              overflow: 'auto',
+              height: '100vh',
+              position: 'fixed',
+              right: 0,
+            }}
             width={365}
             breakpoint="lg"
             collapsedWidth="100%"
@@ -86,9 +83,8 @@ const App = () => {
             <Row className="empty-cart" justify="space-around" align="middle">
               <Col span={14}>
                 <img src="./carrinho-vazio.svg" alt="compras" />
-<br></br>
+                <br></br>
                 Seu carrinho está vazio :(
-
               </Col>
             </Row>
 
