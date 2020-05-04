@@ -17,6 +17,7 @@ header
     box-shadow: 0px 0px 10px #0000001A 
     opacity: 1
     padding: 8px 32px !important
+    z-index: 2 !important
     .search
         text-align: right
         input
@@ -31,6 +32,12 @@ header
             .ant-input-prefix
                 background: url("./logo.svg")
                 width: 42px
+                // image-url arguments:
+                // $path: path relative to images directory in config.rb
+                // $path-only: if true, will cause only the path to be returned instead of a `url()` function
+                // $cache-buster: When set to `false` no cache buster will be used (i.e. `?313420982`)
+                //$header-img: image-url('./busca.svg', false, false)
+                //background-image: $header-img
 
 section
     background: transparent !important
@@ -50,9 +57,9 @@ section
                     font-weight: 600
         .ant-tabs-content  
             .ant-col-5 
-                -ms-flex: 0 0 19.83333333% !important
-                flex: 0 0 19.83333333% !important
-                max-width: 19.833333% !important
+                -ms-flex: 0 0 20% !important
+                flex: 0 0 20% !important
+                max-width: 20% !important
             .product-box   
                 .img
                     background: #FFF
@@ -60,6 +67,8 @@ section
                     padding: 21px 20.24px 20px 21px
                     text-align: center
                     border-radius: 10px
+                    img
+                        width: 100%
                 
             
    

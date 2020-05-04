@@ -6,15 +6,19 @@ import { Row, Col } from 'antd';
 import { Tabs } from 'antd';
 import { Input } from 'antd';
 import { Modal, Button } from 'antd';
+import ProductList from './ProductList.js';
 
 const { TabPane } = Tabs;
 const callback = (key) => { }
 const { Header, Sider, Content } = Layout;
-
 const App = () => {
-  
+
+
   return (
+
+    
     <div className="produtos-sys10">
+
 
       <Layout style={{ paddingTop: '80px' }}>
 
@@ -31,76 +35,31 @@ const App = () => {
           </Row>
         </Header>
 
+
         <Layout style={{ paddingRight: '365px' }}>
           <Content>
 
             <Tabs defaultActiveKey="1" onChange={callback}>
               <TabPane tab="Categoria 1" key="1">
-
-              <Row gutter={[21, 50]}>
-                <Col className="product-box" span={5}> 
-                  <div className="img"> <img src="./logo.svg" alt="Sys10" /> </div>  
-                  <div className="infos"> 
-                    <h2>Coca Cola 220ml</h2> 
-                    <span className="price">R$ 5,50</span>
-                   
-                  </div>  
-                </Col>
-                <Col className="product-box" span={5}> 
-                  <div className="img"> <img src="./logo.svg" alt="Sys10" /> </div>  
-                  <div className="infos"> 
-                    <h2>Coca Cola 220ml</h2> 
-                    <span className="price">R$ 5,50</span>
-                  </div>  
-                </Col>
-                <Col className="product-box" span={5}> 
-                  <div className="img"> <img src="./logo.svg" alt="Sys10" /> </div>  
-                  <div className="infos"> 
-                    <h2>Coca Cola 220ml</h2> 
-                    <span className="price">R$ 5,50</span>
-                  </div>  
-                </Col>
-                <Col className="product-box" span={5}> 
-                  <div className="img"> <img src="./logo.svg" alt="Sys10" /> </div>  
-                  <div className="infos"> 
-                    <h2>Coca Cola 220ml</h2> 
-                    <span className="price">R$ 5,50</span>
-                  </div>  
-                </Col>
-                <Col className="product-box" span={5}> 
-                  <div className="img"> <img src="./logo.svg" alt="Sys10" /> </div>  
-                  <div className="infos"> 
-                    <h2>Coca Cola 220ml</h2> 
-                    <span className="price">R$ 5,50</span>
-                  </div>  
-                </Col>
-              </Row>
-
-              <Row gutter={[21, 50]}>
-                <Col span={5}>  AAAA </Col>
-                <Col span={5}>  AAAA </Col>
-                <Col span={5}>  AAAA </Col>
-                <Col span={5}>  AAAA </Col>
-                <Col span={5}>  AAAA </Col>
-              </Row>
-
+              <ProductList />
               </TabPane>
               <TabPane tab="Categoria 2" key="2">
-                Content of Tab Pane 2
+              <ProductList />
               </TabPane>
               <TabPane tab="Categoria 3" key="3">
-                Content of Tab Pane 3
+              <ProductList />
               </TabPane>
             </Tabs>
             <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
           </Content>
           <Sider
-            style={{
-              overflow: 'auto',
-              height: '100vh',
-              position: 'fixed',
-              right: 0,
-            }}
+          
+          style={{
+            overflow: 'auto',
+            height: '100vh',
+            position: 'fixed',
+            right: 0,
+          }}
 
             width={365}
             breakpoint="lg"
