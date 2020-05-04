@@ -1,24 +1,43 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Row, Col, AutoComplete } from 'antd';
+import 'antd/dist/antd.css';
 
-function App() {
+import { Layout } from 'antd';
+const { Header, Footer, Sider, Content } = Layout;
+
+const App = () => {
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+
+      <Layout>
+        <Header>
+        <a href="/" class="logo">
+                <img src="./logo-sys10.png" alt="Sys10" />
+            </a>
+        </Header>
+        <Layout t className="site-layout" style={{ padding: '0 32px' }}>
+          <Content>Content</Content>
+          <Sider
+          width={365}
+            breakpoint="lg"
+            collapsedWidth="100%"
+            onBreakpoint={broken => {
+              console.log(broken);
+            }}
+            onCollapse={(collapsed, type) => {
+              console.log(collapsed, type);
+            }}
+          >Sider BBBBBBBBBBBBBBB </Sider>
+        </Layout>
+      </Layout>
+
+
+
     </div>
   );
 }
