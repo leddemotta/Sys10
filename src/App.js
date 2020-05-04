@@ -1,29 +1,43 @@
 import React from 'react';
-import './App.css';
-import { Row, Col, AutoComplete } from 'antd';
 import 'antd/dist/antd.css';
-
+import './App.sass';
 import { Layout } from 'antd';
-const { Header, Footer, Sider, Content } = Layout;
+import { Row, Col } from 'antd';
+
+//import { Tabs } from 'antd';
+
+//const { TabPane } = Tabs;
+//const callback = (key) => { }
+
+import { Input } from 'antd';
+
+
+const { Header, Sider, Content } = Layout;
 
 const App = () => {
-
-
-
   return (
-    <div className="App">
-
+    <div className="produtos-sys10">
 
       <Layout>
+
         <Header>
-        <a href="/" class="logo">
+          <Row justify={"space-between"}>
+            <Col className="logo" justify={"start"}  >
+              <a href="/">
                 <img src="./logo-sys10.png" alt="Sys10" />
-            </a>
+              </a>
+            </Col>
+            <Col className="search" justify={"end"}>
+              <Input placeholder="Buscar por Produto" size="large" prefix={"SH"} style={{ width: 414 }} />
+            </Col>
+          </Row>
         </Header>
-        <Layout t className="site-layout" style={{ padding: '0 32px' }}>
-          <Content>Content</Content>
+
+        <Layout>
+          <Content style={{ padding: '0  0 0 32px' }}>Content</Content>
           <Sider
-          width={365}
+            style={{ padding: '0  32px 0 0' }}
+            width={365}
             breakpoint="lg"
             collapsedWidth="100%"
             onBreakpoint={broken => {
@@ -32,11 +46,9 @@ const App = () => {
             onCollapse={(collapsed, type) => {
               console.log(collapsed, type);
             }}
-          >Sider BBBBBBBBBBBBBBB </Sider>
+          > AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA </Sider>
         </Layout>
       </Layout>
-
-
 
     </div>
   );
