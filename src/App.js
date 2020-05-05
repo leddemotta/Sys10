@@ -186,15 +186,15 @@ const App = () => {
 
             </Row>
 
-
+            {/*
             <Row className="empty-cart" justify="space-around" align="middle">
               <Col span={14}>
                 <img src="./carrinho-vazio.svg" alt="compras" />
                 <br></br>
                 Seu carrinho está vazio :(
               </Col>
-            </Row>
-
+            </Row>*/
+            }
 
           </Sider>
         </Layout>
