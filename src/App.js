@@ -1,23 +1,51 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import 'antd/dist/antd.css';
 import './App.sass';
+import ProductList from './ProductList'
 import { Tabs, Input, Row, Col, Layout, InputNumber, Button  } from 'antd';
-import ProductList from './ProductList.js';
-import API from './api.js';
 
+import api from './api.js';
 const { TabPane } = Tabs;
-const callback = (key) => { }
 const { Header, Sider, Content } = Layout;
 
 const App = () => {
+    const [products, setProducts] = useState([]);
+    const [prevProducts, setPrevProducts] = useState([]);
+    const [categories, setCategories] = useState([]);
 
-  function onChange(value) {
-    console.log('changed', value);
+    useEffect(() => {
+      api.get(`/categoria`).then(res => {
+        setCategories(res.data);
+        fetch(1);
+      })
+    }, []);
+
+  const fetch = (id) => {
+    api.get(`/categoria/${id}/produto`).then(res => {
+      console.log(res, 'bbbbbbbbbbbbb')
+      setProducts(res.data );
+      setPrevProducts(res.data);
+    });
   }
 
-  const wish = [];
-  //{this.state.categories.map(category => <> {category.nome} </>  )}
+  const onChange = (value) => {
+    console.log('changed', value);
+  }
   
+  const callback = (key) => { 
+    fetch(key);
+  }
+
+  const handleSearch = e => {
+    const filtered = products.filter(product => {
+      return product.nome.toLowerCase().includes(e.target.value.toLowerCase());
+    });
+    setProducts(filtered);
+    if(e.target.value == '') {
+      setProducts(prevProducts);
+    }
+  };
+
   return (
 
     <div className="produtos-sys10">
@@ -31,7 +59,7 @@ const App = () => {
               </a>
             </Col>
             <Col className="search" justify={"end"}>
-              <Input placeholder="Buscar por Produto" size="large" prefix={<><img src="./busca.svg" /></>} style={{ width: 414 }} />
+              <Input placeholder="Buscar por Produto" onPressEnter={handleSearch} size="large" prefix={<><img src="./busca.svg" alt={'search'} /></>} style={{ width: 414 }} />
             </Col>
           </Row>
         </Header>
@@ -39,15 +67,11 @@ const App = () => {
         <Layout style={{ paddingRight: '365px' }}>
           <Content>
             <Tabs defaultActiveKey="1" onChange={callback}>
-              <TabPane tab="Categoria 1" key="1">
-                <ProductList />
-              </TabPane>
-              <TabPane tab="Categoria 2" key="2">
-                <ProductList />
-              </TabPane>
-              <TabPane tab="Categoria 3" key="3">
-                <ProductList />
-              </TabPane>
+              {categories.map(category => 
+                <TabPane tab={category.nome} key={category.id}>
+                  <ProductList products={products} />
+                </TabPane>
+              )}
             </Tabs>
           </Content>
           <Sider
@@ -121,25 +145,6 @@ const App = () => {
                 </Row>
               </li>
 
-              <li>
-                <Row>
-                  <Col justify={"start"}>
-                    <span className="img"> 
-                      <img src="https://static.carrefour.com.br/medias/sys_master/images/images/hdd/h7d/h00/h00/12175674507294.jpg" width={50} alt="compras" /> 
-                    </span>
-                  </Col>
-                  <Col justify={"start"} span={12}>
-                    <span className="infos"> 
-                      <span className="title"> Chocolate ao Leite Hershey's Ovomaltine 87g </span>
-                      <span className="counter"> <InputNumber size="small" min={0} onChange={onChange} /> </span>
-                    </span>
-                  </Col>
-                  <Col className="action" offset={0} span={6} justify={"end"}>
-                    <span className="price"> R$5,50 </span>
-                    <span className="remove"> Remover </span>
-                  </Col>
-                </Row>
-              </li>
 
 
               
