@@ -10,7 +10,7 @@
     "axios": "^0.19.2",
     "create-react-component": "0.0.4",
     "customize-cra": "^0.9.1",
-    "moment": "2.24.0",
+    "moment": "2.29.4",
     "moment-timezone": "^0.5.28",
     "react": "^16.13.1",
     "react-app-rewired": "^2.1.6",
